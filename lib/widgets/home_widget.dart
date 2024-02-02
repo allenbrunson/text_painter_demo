@@ -88,7 +88,7 @@ class _HomeWidgetState extends State<HomeWidget>
         list.add(const DividerWidget());
         list.add(this._wrap(const ScreenTextScaleWidget()));
         list.add(const DividerWidget());
-        list.addAll(textSizeWidgetList());
+        list.addAll(textSizeWidgetList(this.context));
         list.add(edge);
         return list;
     }

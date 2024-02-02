@@ -12,12 +12,12 @@ import "package:text_painter_demo/text_painter_demo.dart";
 
 // you must call TextPainter.dispose() when finished with this
 
-TextPainter textPainterFromText(Text text) {
+TextPainter textPainterFromText(BuildContext context, Text text) {
     return TextPainter(ellipsis:null,
      locale:text.locale,
      maxLines:text.maxLines,
      strutStyle:text.strutStyle,
-     text:_text(text),
+     text:_text(context, text),
      textAlign:sanitizeTextAlign(text.textAlign),
      textDirection:sanitizeTextDirection(text.textDirection),
      textHeightBehavior:text.textHeightBehavior,
@@ -32,8 +32,8 @@ TextPainter textPainterFromText(Text text) {
 /*                                                                            */
 /******************************************************************************/
 
-InlineSpan _text(Text text) {
-    return TextSpan(text:stringFromText(text), style:textStyleFromText(text));
+InlineSpan _text(BuildContext context, Text text) {
+    return TextSpan(text:stringFromText(text), style:_textStyle(context, text));
 }
 
 TextScaler _textScaler(TextScaler? textScaler) {
@@ -43,6 +43,24 @@ TextScaler _textScaler(TextScaler? textScaler) {
     else {
         return screenMediaQueryData().textScaler;
     }
+}
+
+TextStyle _textStyle(BuildContext context, Text text) {
+    if (debugMergeStyles()) {
+        return _textStyleMerge(context, text);
+    }
+    else {
+        return _textStylePlain(context, text);
+    }
+}
+
+TextStyle _textStyleMerge(BuildContext context, Text text) {
+    final data = DefaultTextStyle.of(context);
+    return data.style.merge(textStyleFromText(text));
+}
+
+TextStyle _textStylePlain(BuildContext context, Text text) {
+    return textStyleFromText(text);
 }
 
 

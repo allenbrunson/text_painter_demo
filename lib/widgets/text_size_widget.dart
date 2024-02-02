@@ -178,9 +178,11 @@ class _TextSizeWidgetState extends State<TextSizeWidget>
 /*                                                                            */
 /******************************************************************************/
 
-TextSizeWidget textSizeWidget(String string, TextStyle textStyle) {
+TextSizeWidget textSizeWidget(BuildContext context, String string,
+ TextStyle textStyle)
+{
     final text = _text(string, textStyle);
-    final data = textSizeData(text);
+    final data = textSizeData(context, text);
     return TextSizeWidget(text:text, textSizeData:data);
 }
 

@@ -11,7 +11,7 @@ import "package:text_painter_demo/text_painter_demo.dart";
 /******************************************************************************/
 
 TextStyle emptyTextStyle() {
-    return const TextStyle();
+    return _override(const TextStyle());
 }
 
 bool isTextStyle(dynamic textStyle) {
@@ -31,15 +31,18 @@ TextStyle sanitizeTextStyle(dynamic textStyle) {
 /******************************************************************************/
 
 TextStyle textStyleBold(double fontSize, [Color? color]) {
-    return TextStyle(color:color, fontWeight:FontWeight.bold, fontSize:fontSize);
+    final data = TextStyle(color:color, fontWeight:FontWeight.bold, fontSize:fontSize);
+    return _override(data);
 }
 
 TextStyle textStyleItalic(double fontSize, [Color? color]) {
-    return TextStyle(color:color, fontStyle:FontStyle.italic, fontSize:fontSize);
+    final data = TextStyle(color:color, fontStyle:FontStyle.italic, fontSize:fontSize);
+    return _override(data);
 }
 
 TextStyle textStylePlain(double fontSize, [Color? color]) {
-    return TextStyle(color:color, fontStyle:FontStyle.normal, fontSize:fontSize);
+    final data = TextStyle(color:color, fontStyle:FontStyle.normal, fontSize:fontSize);
+    return _override(data);
 }
 
 
@@ -63,6 +66,30 @@ String textStyleString(TextStyle? original) {
 /***  private utility functions                                             ***/
 /*                                                                            */
 /******************************************************************************/
+
+TextStyle _override(TextStyle textStyle) {
+    if (debugOverrideDefaults() == false) return textStyle;
+    return textStyle.copyWith(height:_styleHeight(textStyle),
+     letterSpacing:_styleLetterSpacing(textStyle));
+}
+
+double _styleHeight(TextStyle textStyle) {
+    if (isDouble(textStyle.height)) {
+        return sanitizeDouble(textStyle.height);
+    }
+    else {
+        return 1.0;
+    }
+}
+
+double _styleLetterSpacing(TextStyle textStyle) {
+    if (isDouble(textStyle.letterSpacing)) {
+        return sanitizeDouble(textStyle.letterSpacing);
+    }
+    else {
+        return 0.0;
+    }
+}
 
 String _titleStyle(TextStyle textStyle) {
     switch (textStyle.fontStyle) {

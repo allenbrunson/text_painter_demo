@@ -10,10 +10,10 @@ import "package:text_painter_demo/text_painter_demo.dart";
 /*                                                                            */
 /******************************************************************************/
 
-List<Widget> textSizeWidgetList() {
+List<Widget> textSizeWidgetList(BuildContext context) {
     final list = <Widget>[];
     const edge = DividerWidget();
-    for (final item in _textSizeWidgetList()) {
+    for (final item in _textSizeWidgetList(context)) {
         list.add(item);
         list.add(edge);
     }
@@ -31,8 +31,8 @@ String _fontTestLine() {
     return "AaYyMmFfGgJjWw";
 }
 
-TextSizeWidget _item(int lineCount, TextStyle textStyle) {
-    return textSizeWidget(_text(lineCount), textStyle);
+TextSizeWidget _item(BuildContext context, int lineCount, TextStyle textStyle) {
+    return textSizeWidget(context, _text(lineCount), textStyle);
 }
 
 String _text(int lineCount) {
@@ -43,11 +43,11 @@ String _text(int lineCount) {
     return trimString(buff.toString());
 }
 
-List<TextSizeWidget> _textSizeWidgetList() {
+List<TextSizeWidget> _textSizeWidgetList(BuildContext context) {
     final list = <TextSizeWidget>[];
-    list.add(_item(1, textStylePlain(24.0)));
-    list.add(_item(2, textStyleBold(23.0)));
-    list.add(_item(3, textStyleItalic(20.0)));
+    list.add(_item(context, 1, textStylePlain(24.0)));
+    list.add(_item(context, 2, textStyleBold(23.0)));
+    list.add(_item(context, 3, textStyleItalic(20.0)));
     return list;
 }
 

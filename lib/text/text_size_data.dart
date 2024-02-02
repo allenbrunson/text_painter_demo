@@ -72,10 +72,10 @@ TextSizeData sanitizeTextSizeData(dynamic textSizeData) {
     return emptyTextSizeData();
 }
 
-TextSizeData textSizeData(Text text, {double minWidth = 0.0,
- double maxWidth = double.infinity})
+TextSizeData textSizeData(BuildContext context, Text text,
+ {double minWidth = 0.0, double maxWidth = double.infinity})
 {
-    final pntr = textPainterFromText(text);
+    final pntr = textPainterFromText(context, text);
     pntr.layout(maxWidth:maxWidth, minWidth:minWidth);
     final data = TextSizeData.fromTextPainter(pntr);
     pntr.dispose();

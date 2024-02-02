@@ -30,6 +30,7 @@ export "geometry/size.dart";
 // modules
 export "modules/color_functions.dart";
 export "modules/event_manager.dart";
+export "modules/fixes.dart";
 export "modules/global_key.dart";
 export "modules/material_three.dart";
 export "modules/paint_creators.dart";
