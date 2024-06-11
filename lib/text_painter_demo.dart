@@ -8,9 +8,6 @@
 /*                                                                            */
 /******************************************************************************/
 
-// preamble
-library text_painter_demo;
-
 // dart
 export "dart:async";
 export "dart:math";
