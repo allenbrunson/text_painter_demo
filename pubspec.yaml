@@ -11,6 +11,6 @@ flutter:
   uses-material-design: true
 
 dependencies:
-  event_bus: 2.0.0
+  event_bus: 2.0.1
   flutter:
     sdk: flutter
