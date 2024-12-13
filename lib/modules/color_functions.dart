@@ -25,28 +25,83 @@ Color colorInt(int r, int g, int b, [int a = 255]) {
 // true if this color is transparent
 
 bool colorIsTransparent(Color color) {
-    return color.alpha <= 0;
+    return colorAlpha(color) <= 0;
 }
 
 // color to a displayable hexadecimal string
 
 String colorString(Color? color) {
     if (color == null) return emptyGeometryElement();
-    final text = color.value.toRadixString(16).padLeft(8, "0");
+    final text = colorValue(color).toRadixString(16).padLeft(8, "0");
     return "0x${text.toUpperCase()}";
 }
 
 // new color with an updated alpha value
 
 Color colorWithAlpha(Color color, int alpha) {
-    return colorInt(color.red, color.green, color.blue, alpha);
+    return colorInt(colorRed(color), colorGreen(color),
+     colorBlue(color), alpha);
 }
 
-bool isColor(dynamic color) {
-    return (color is Color);
+
+/******************************************************************************/
+/*                                                                            */
+/***  replacements for deprecated color functions                           ***/
+/*                                                                            */
+/******************************************************************************/
+
+int colorAlpha(Color color) {
+    return _floatToInt8(color.a);
 }
 
-Color sanitizeColor(dynamic color) {
-    if (isColor(color)) return color;
-    return Colors.transparent;
+int colorBlue(Color color) {
+    return _floatToInt8(color.b);
 }
+
+int colorGreen(Color color) {
+    return _floatToInt8(color.g);
+}
+
+int colorRed(Color color) {
+    return _floatToInt8(color.r);
+}
+
+int colorValue(Color color) {
+    return _floatToInt8(color.a) << 24 |
+     _floatToInt8(color.r) << 16 |
+     _floatToInt8(color.g) << 8 |
+     _floatToInt8(color.b) << 0;
+}
+
+
+/******************************************************************************/
+/*                                                                            */
+/***  private utility functions                                             ***/
+/*                                                                            */
+/******************************************************************************/
+
+int _floatToInt8(double x) {
+    return (x * 255.0).round() & 0xff;
+}
+
+
+/******************************************************************************/
+/*                                                                            */
+/***  color functions                                                       ***/
+/*                                                                            */
+/******************************************************************************
+
+overview
+--------
+
+functions for dealing with color objects
+
+
+maintenance notes
+-----------------
+
+in flutter version 3.27, released december 2024, the flutter maintainers decided
+to remove all the common-sense integer accessor functions. so i wrote my own
+replacements. nice try, guys.
+
+*/
