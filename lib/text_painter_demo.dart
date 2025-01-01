@@ -25,14 +25,11 @@ export "geometry/screen.dart";
 export "geometry/size.dart";
 
 // modules
-export "modules/color_components.dart";
 export "modules/event_manager.dart";
 export "modules/fixes.dart";
 export "modules/global_key.dart";
 export "modules/material_three.dart";
-export "modules/num.dart";
 export "modules/paint_creators.dart";
-export "modules/range.dart";
 export "modules/text_size_widget_list.dart";
 export "modules/timer.dart";
 export "modules/widget_wrappers.dart";
