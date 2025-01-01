@@ -31,7 +31,7 @@ bool colorIsTransparent(Color color) {
 // new color with an updated alpha value
 
 Color colorWithAlpha(Color color, int alpha) {
-    return colorInt(color.intRed, color.intGreen, color.intBlue, alpha);
+    return color.withAlpha(alpha);
 }
 
 
