@@ -147,7 +147,7 @@ class _TextSizeWidgetState extends State<TextSizeWidget>
     }
 
     Widget _outer(Widget child) {
-        final colr = colorWithAlpha(Colors.blue, 100);
+        final colr = Colors.blue.withAlpha(100);
         return backgroundColorWidget(child, colr);
     }
 
@@ -162,7 +162,7 @@ class _TextSizeWidgetState extends State<TextSizeWidget>
     }
 
     Widget _textColor(Widget child) {
-        final colr = colorWithAlpha(Colors.grey, 150);
+        final colr = Colors.grey.withAlpha(150);
         return backgroundColorWidget(child, colr);
     }
 

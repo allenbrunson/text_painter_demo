@@ -26,7 +26,6 @@ export "geometry/size.dart";
 
 // modules
 export "modules/color_components.dart";
-export "modules/color_functions.dart";
 export "modules/event_manager.dart";
 export "modules/fixes.dart";
 export "modules/global_key.dart";
