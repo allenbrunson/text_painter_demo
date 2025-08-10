@@ -78,7 +78,7 @@ double _styleHeight(TextStyle textStyle) {
         return sanitizeDouble(textStyle.height);
     }
     else {
-        return 1.0;
+        return 1.14;
     }
 }
 

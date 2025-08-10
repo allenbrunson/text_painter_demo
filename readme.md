@@ -45,7 +45,7 @@ Okay, I tried that. (That is why `textPainterFromText()` needs a `BuildContext` 
 
 That got me thinking in the right direction, though. As I suspected, the problem is that `Text` and `TextPainter` are now using different sets of defaults. So I decided to tackle the problem in a different way. What if every `TextStyle` I create has all of its important parameters specified, so that the defaults don’t matter anymore? I was able to make this work, thankfully.
 
-Specifically, the values that must always exist in every `TextStyle` to make this issue go away are `height` and `letterSpacing`. If those values do not exist, you should set them to 1.0 and 0.0, respectively. (Other values will likely also work, if you prefer something different.)
+Specifically, the values that must always exist in every `TextStyle` to make this issue go away are `height` and `letterSpacing`. If those values do not exist, you should set them to 1.14 and 0.0, respectively. Other values will also work, if you prefer something different.
 
 I added code to apply either of these fixes to the demo app, but they are turned off by default. To enable them, have a look at this source file:
 
