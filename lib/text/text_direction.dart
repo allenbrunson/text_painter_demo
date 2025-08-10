@@ -3,6 +3,13 @@
 
 import "package:text_painter_demo/text_painter_demo.dart";
 
+
+/******************************************************************************/
+/*                                                                            */
+/***  TextDirection functions                                               ***/
+/*                                                                            */
+/******************************************************************************/
+
 TextDirection emptyTextDirection() {
     return TextDirection.ltr;
 }

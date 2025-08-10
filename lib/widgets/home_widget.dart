@@ -12,7 +12,11 @@ import "package:text_painter_demo/text_painter_demo.dart";
 
 class HomeWidget extends StatefulWidget
 {
+    // constructor
+
     const HomeWidget({super.key});
+
+    // public instance methods
 
     @override State<HomeWidget> createState() {
         return _HomeWidgetState();
@@ -32,9 +36,9 @@ class _HomeWidgetState extends State<HomeWidget>
     }
 
     @override void dispose() {
-        super.dispose();
         this._scrollController?.dispose();
         this._scrollController = null;
+        super.dispose();
     }
 
     @override void initState() {

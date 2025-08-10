@@ -61,7 +61,7 @@ List<TextSizeWidget> _textSizeWidgetList(BuildContext context) {
 overview
 --------
 
-this module creates a list of TextSizeWidget objects, along with dividers, than
-demonstrate the TextPainter issue i believe is broken.
+this module creates a list of TextSizeWidget objects, along with dividers, that
+demonstrate the TextPainter issue that this app demonstrates.
 
 */

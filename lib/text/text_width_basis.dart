@@ -3,6 +3,13 @@
 
 import "package:text_painter_demo/text_painter_demo.dart";
 
+
+/******************************************************************************/
+/*                                                                            */
+/***  TextWidthBasis identity functions                                     ***/
+/*                                                                            */
+/******************************************************************************/
+
 TextWidthBasis emptyTextWidthBasis() {
     return TextWidthBasis.parent;
 }

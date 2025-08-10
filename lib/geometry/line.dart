@@ -70,6 +70,6 @@ Line sanitizeLine(dynamic line) {
 overview
 --------
 
-erm, it's a line. duh
+an object with two points that specify a line.
 
 */

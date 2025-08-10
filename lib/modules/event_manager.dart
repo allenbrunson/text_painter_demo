@@ -79,18 +79,20 @@ manages the event bus, an implementation of the subscribe/publish model.
 how to use the event manager
 ----------------------------
 
-1) to subscribe to a particular event, call EventManager.subscribe<T>(), where T
-is the event type you want to listen for. if you will need to cancel this
-subscription later, hold on to the StreamSubscription<T> you get back.
+  1) to subscribe to a particular event, call EventManager.subscribe<T>(),
+     where T is the event type you want to listen for. if you will need to
+     cancel this subscription later, hold on to the StreamSubscription<T> you
+     get back.
 
-2) if you need a copy of the object sent as part of the event, then you want to
-call listen() instead of subscribe(). it otherwise works the same way.
+  2) if you need a copy of the object sent as part of the event, then you want
+     to call listen() instead of subscribe(). it otherwise works the same way.
 
-3) to cancel a subscription, call the cancel() method on your saved
-StreamSubscription<T>, then get rid of it.
+  3) to cancel a subscription, call the cancel() method on your saved
+     StreamSubscription<T>, then get rid of it.
 
-4) to fire an event, call EventManager.fire() with an instance of the object
-that represents the event to be fired. this can be an instance of a class that
-has no member variables and no methods, so it's easy to define new event types.
+  4) to fire an event, call EventManager.fire() with an instance of the object
+     that represents the event to be fired. this can be an instance of a class
+     that has no member variables and no methods, so it's easy to define new
+     event types.
 
 */
