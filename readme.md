@@ -11,7 +11,7 @@ that has this signature:
 
   `TextPainter textPainterFromText(BuildContext context, Text text)`  
 
-As you might guess, this function creates a `TextPainter` object from the properties it finds in the `Text` object it is passed as a parameter. (It needs the `BuildContext` to extract some information from the widget tree that will contain the `Text` object.)
+As you might guess, this function creates a `TextPainter` object from the properties it finds in the `Text` object that is passed in as a parameter. (It needs the `BuildContext` to extract some information from the widget tree that will contain the `Text` object.)
 
 By default, if a `Text` object does not have its own `TextScaler`, then it makes itself larger or smaller depending on the current screen text scale, as set by the user in the iOS or Android settings. So for that reason, if `textPainterFromText()` discovers that the `Text` object it is given does not have its own `TextScaler`, then it uses the one that is currently in effect for the device.
 
