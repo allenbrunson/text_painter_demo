@@ -3,7 +3,7 @@ by allen brunson • january 2024
 
 I wrote this demo app to illustrate an issue I discovered while using Flutter. To wit: before the advent of material three styling, Text and TextPainter objects produced equivalent results. After material three, they do not.
 
-This heart of this app is one relatively simple function, in this source file:
+The heart of this app is one relatively simple function, in this source file:
 
   `lib/text/text_painter.dart`
   
