@@ -19,7 +19,7 @@ bool isTextStyle(dynamic textStyle) {
 }
 
 TextStyle sanitizeTextStyle(dynamic textStyle) {
-    if (isTextStyle(textStyle)) return textStyle;
+    if (textStyle is TextStyle) return textStyle;
     return emptyTextStyle();
 }
 

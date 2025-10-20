@@ -56,7 +56,7 @@ bool isLine(dynamic line) {
 }
 
 Line sanitizeLine(dynamic line) {
-    if (isLine(line)) return line;
+    if (line is Line) return line;
     return Line.zero;
 }
 

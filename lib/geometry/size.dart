@@ -15,7 +15,7 @@ bool isSize(dynamic size) {
 }
 
 Size sanitizeSize(dynamic size) {
-    if (isSize(size)) return size;
+    if (size is Size) return size;
     return Size.zero;
 }
 

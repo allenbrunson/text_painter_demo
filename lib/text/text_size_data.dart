@@ -68,7 +68,7 @@ bool isTextSizeData(dynamic textSizeData) {
 }
 
 TextSizeData sanitizeTextSizeData(dynamic textSizeData) {
-    if (isTextSizeData(textSizeData)) return textSizeData;
+    if (textSizeData is TextSizeData) return textSizeData;
     return emptyTextSizeData();
 }
 

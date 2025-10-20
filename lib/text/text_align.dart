@@ -19,6 +19,6 @@ bool isTextAlign(dynamic textAlign) {
 }
 
 TextAlign sanitizeTextAlign(dynamic textAlign) {
-    if (isTextAlign(textAlign)) return textAlign;
+    if (textAlign is TextAlign) return textAlign;
     return emptyTextAlign();
 }

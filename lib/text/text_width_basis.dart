@@ -19,6 +19,6 @@ bool isTextWidthBasis(dynamic textWidthBasis) {
 }
 
 TextWidthBasis sanitizeTextWidthBasis(dynamic textWidthBasis) {
-    if (isTextWidthBasis(textWidthBasis)) return textWidthBasis;
+    if (textWidthBasis is TextWidthBasis) return textWidthBasis;
     return emptyTextWidthBasis();
 }

@@ -39,6 +39,6 @@ bool isEdgeInsets(dynamic edgeInsets) {
 }
 
 EdgeInsets sanitizeEdgeInsets(dynamic edgeInsets) {
-    if (isEdgeInsets(edgeInsets)) return edgeInsets;
+    if (edgeInsets is EdgeInsets) return edgeInsets;
     return EdgeInsets.zero;
 }

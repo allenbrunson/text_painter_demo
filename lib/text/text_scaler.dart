@@ -19,7 +19,7 @@ bool isTextScaler(dynamic textScaler) {
 }
 
 TextScaler sanitizeTextScaler(dynamic textScaler) {
-    if (isTextScaler(textScaler)) return textScaler;
+    if (textScaler is TextScaler) return textScaler;
     return emptyTextScaler();
 }
 

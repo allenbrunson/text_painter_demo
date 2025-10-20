@@ -19,6 +19,6 @@ bool isTextDirection(dynamic textDirection) {
 }
 
 TextDirection sanitizeTextDirection(dynamic textDirection) {
-    if (isTextDirection(textDirection)) return textDirection;
+    if (textDirection is TextDirection) return textDirection;
     return emptyTextDirection();
 }
