@@ -1,10 +1,10 @@
-// text_painter_demo.dart -- text_painter_demo master module
+// text_painter_demo.dart -- text_painter_demo library master module
 // by allen brunson  january 3 2024
 
 
 /******************************************************************************/
 /*                                                                            */
-/***  text_painter_demo master module                                       ***/
+/***  text_painter_demo library master module                               ***/
 /*                                                                            */
 /******************************************************************************/
 
