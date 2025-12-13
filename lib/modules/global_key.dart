@@ -10,9 +10,10 @@ import "package:text_painter_demo/text_painter_demo.dart";
 /*                                                                            */
 /******************************************************************************/
 
-Offset? globalKeyGlobalToLocal(GlobalKey? globalKey, Offset global) {
+Offset? globalKeyLocalOffset(GlobalKey? globalKey, Offset global) {
     try {
-        final data = globalKey!.currentContext!.findRenderObject();
+        final data = globalKey?.currentContext?.findRenderObject();
+        if (data == null) return null;
         final RenderBox rbox = (data as RenderBox);
         return rbox.globalToLocal(global);
     }
@@ -23,7 +24,7 @@ Offset? globalKeyGlobalToLocal(GlobalKey? globalKey, Offset global) {
 
 Size? globalKeySize(GlobalKey? globalKey) {
     try {
-        return globalKey!.currentContext!.size;
+        return globalKey?.currentContext?.size;
     }
     catch (e) {
         return null;
