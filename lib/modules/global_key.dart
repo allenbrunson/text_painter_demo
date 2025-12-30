@@ -10,11 +10,21 @@ import "package:text_painter_demo/text_painter_demo.dart";
 /*                                                                            */
 /******************************************************************************/
 
+BuildContext? globalKeyCurrentContext(GlobalKey? globalKey) {
+    try {
+        return globalKey?.currentContext;
+    }
+    catch (e) {
+        return null;
+    }
+}
+
 Offset? globalKeyLocalOffset(GlobalKey? globalKey, Offset global) {
     try {
-        final data = globalKey?.currentContext?.findRenderObject();
+        final data = globalKeyCurrentContext(globalKey)?.findRenderObject();
         if (data == null) return null;
-        final RenderBox rbox = (data as RenderBox);
+        final rbox = objectOfType<RenderBox>(data);
+        if (rbox == null) return null;
         return rbox.globalToLocal(global);
     }
     catch (e) {
@@ -24,7 +34,7 @@ Offset? globalKeyLocalOffset(GlobalKey? globalKey, Offset global) {
 
 Size? globalKeySize(GlobalKey? globalKey) {
     try {
-        return globalKey?.currentContext?.size;
+        return globalKeyCurrentContext(globalKey)?.size;
     }
     catch (e) {
         return null;

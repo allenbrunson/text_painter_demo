@@ -37,6 +37,7 @@ export "modules/widget_wrappers.dart";
 // object
 export "object/double.dart";
 export "object/int.dart";
+export "object/object.dart";
 export "object/string.dart";
 
 // text
