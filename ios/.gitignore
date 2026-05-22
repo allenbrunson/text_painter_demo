@@ -1,4 +1,4 @@
-**/dgph
+# miscellaneous
 *.mode1v3
 *.mode2v3
 *.moved-aside
@@ -7,19 +7,19 @@
 **/*sync/
 .sconsign.dblite
 .tags*
-**/.vagrant/
-**/DerivedData/
+/.vagrant/
+/DerivedData/
 Icon?
-**/Pods/
-**/.symlinks/
+/Pods/
+.symlinks/
 profile
 xcuserdata
-**/.generated/
+/.generated/
+Flutter/ephemeral/
 Flutter/App.framework
 Flutter/Flutter.framework
 Flutter/Flutter.podspec
 Flutter/Generated.xcconfig
-Flutter/ephemeral/
 Flutter/app.flx
 Flutter/app.zip
 Flutter/flutter_assets/
@@ -27,7 +27,11 @@ Flutter/flutter_export_environment.sh
 ServiceDefinitions.json
 Runner/GeneratedPluginRegistrant.*
 
-# Exceptions to above rules.
+# fastlane
+fastlane/README.md
+fastlane/report.xml
+
+# exceptions
 !default.mode1v3
 !default.mode2v3
 !default.pbxuser
