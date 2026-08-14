@@ -14,3 +14,5 @@ dependencies:
   event_bus: 2.0.1
   flutter:
     sdk: flutter
+  material_ui: 1.0.0
+

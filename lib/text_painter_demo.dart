@@ -12,8 +12,8 @@
 export "dart:async";
 export "dart:math";
 
-// flutter
-export "package:flutter/material.dart";
+// packages
+export "package:material_ui/material_ui.dart";
 
 // geometry
 export "geometry/edge_insets.dart";
